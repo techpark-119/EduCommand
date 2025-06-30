@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - Profile</title>
+    <link rel="stylesheet" href="styles\profile.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <h2>EduPortal</h2>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                Dashboard
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Profile
+            </a>
+            <a href="students.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                All Students
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                Courses
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10,9 9,9 8,9"/>
+                </svg>
+                Assignments
+            </a>
+            <a href="#" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                Analytics
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="auth.html" class="nav-item logout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+                <h1>Profile</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="Search...">
+                </div>
+                
+                <div class="notifications">
+                    <button class="notification-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+                
+                <div class="user-profile">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%238AB6F9'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16' font-weight='bold'%3EJD%3C/text%3E%3C/svg%3E" alt="Profile">
+                    <span>John Doe</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-banner">
+                    <div class="profile-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='60' fill='%238AB6F9'/%3E%3Ctext x='60' y='75' text-anchor='middle' fill='white' font-size='48' font-weight='bold'%3EJD%3C/text%3E%3C/svg%3E" alt="Profile Avatar">
+                        <button class="avatar-edit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2>John Doe</h2>
+                        <p>Administrator</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1,247</span>
+                                <span class="stat-label">Students Managed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Active Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-primary">Edit Profile</button>
+                        <button class="btn-secondary">Settings</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="profile-details">
+                <div class="details-grid">
+                    <!-- Personal Information -->
+                    <div class="detail-card">
+                        <div class="card-header">
+                            <h3>Personal Information</h3>
+                            <button class="edit-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="info-group">
+                                <label>Full Name</label>
+                                <p>John Doe</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Email</label>
+                                <p>john.doe@eduportal.com</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Phone</label>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Date of Birth</label>
+                                <p>January 15, 1985</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Address</label>
+                                <p>123 Education Street, Learning City, LC 12345</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Information -->
+                    <div class="detail-card">
+                        <div class="card-header">
+                            <h3>Professional Information</h3>
+                            <button class="edit-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="info-group">
+                                <label>Position</label>
+                                <p>Senior Administrator</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Department</label>
+                                <p>Academic Affairs</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Employee ID</label>
+                                <p>EMP-2019-001</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Join Date</label>
+                                <p>March 1, 2019</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Specialization</label>
+                                <p>Educational Management, Student Affairs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="detail-card">
+                        <div class="card-header">
+                            <h3>Security & Privacy</h3>
+                            <button class="edit-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="info-group">
+                                <label>Password</label>
+                                <p>••••••••</p>
+                                <button class="change-password-btn">Change Password</button>
+                            </div>
+                            <div class="info-group">
+                                <label>Two-Factor Authentication</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="2fa" checked>
+                                    <label for="2fa"></label>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <label>Email Notifications</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="notifications" checked>
+                                    <label for="notifications"></label>
+                                </div>
+                            </div>
+                            <div class="info-group">
+                                <label>Last Login</label>
+                                <p>Today at 9:30 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Summary -->
+                    <div class="detail-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="card-content">
+                            <div class="activity-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker blue"></div>
+                                    <div class="timeline-content">
+                                        <p>Updated student records for Mathematics class</p>
+                                        <span class="timeline-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker green"></div>
+                                    <div class="timeline-content">
+                                        <p>Approved new course registration requests</p>
+                                        <span class="timeline-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker orange"></div>
+                                    <div class="timeline-content">
+                                        <p>Generated monthly performance reports</p>
+                                        <span class="timeline-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker purple"></div>
+                                    <div class="timeline-content">
+                                        <p>Conducted faculty meeting</p>
+                                        <span class="timeline-time">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar toggle
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        });
+
+        // Toggle switches
+        document.querySelectorAll('.toggle-switch input').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                console.log(`${this.id} toggled: ${this.checked}`);
+            });
+        });
+
+        // Edit buttons
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Edit functionality would be implemented here');
+            });
+        });
+
+        // Change password button
+        document.querySelector('.change-password-btn').addEventListener('click', function() {
+            alert('Change password modal would open here');
+        });
+
+        // Profile action buttons
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            alert('Edit profile modal would open here');
+        });
+
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            alert('Settings page would open here');
+        });
+    </script>
+</body>
+</html>
