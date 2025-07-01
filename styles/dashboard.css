@@ -19,7 +19,7 @@ body {
     width: 280px;
     height: 100vh;
     background: linear-gradient(135deg, #00246B, #1e3a8a);
-    color: white;e
+    color: white;
     overflow-y: auto;
     transition: all 0.3s ease;
     z-index: 1000;
