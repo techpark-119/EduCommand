@@ -11,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Sidebar Styles */
 .sidebar {
     position: fixed;
     left: 0;
@@ -109,7 +108,7 @@ body {
     border-left-color: #ef4444 !important;
 }
 
-/* Main Content */
+
 .main-content {
     margin-left: 280px;
     min-height: 100vh;
@@ -121,7 +120,7 @@ body {
     margin-left: 80px;
 }
 
-/* Header */
+
 .header {
     background: white;
     padding: 1rem 2rem;
@@ -256,12 +255,10 @@ body {
     color: #00246B;
 }
 
-/* Dashboard Content */
 .dashboard-content {
     padding: 2rem;
 }
 
-/* Stats Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -342,7 +339,6 @@ body {
     color: #dc2626;
 }
 
-/* Dashboard Grid */
 .dashboard-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -394,7 +390,6 @@ body {
     cursor: pointer;
 }
 
-/* Chart Card */
 .chart-card {
     grid-row: span 2;
 }
@@ -409,7 +404,6 @@ body {
     height: 100%;
 }
 
-/* Activity List */
 .activity-list {
     padding: 1rem 2rem 2rem;
 }
@@ -464,7 +458,6 @@ body {
     font-size: 0.75rem;
 }
 
-/* Student List */
 .student-list {
     padding: 1rem 2rem 2rem;
 }
@@ -513,7 +506,6 @@ body {
     font-size: 0.875rem;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .dashboard-grid {
         grid-template-columns: 1fr;

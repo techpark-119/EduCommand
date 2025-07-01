@@ -150,11 +150,9 @@
             loginForm.classList.add('hidden');
         });
 
-        // Handle form submissions
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Redirect to dashboard for demo
                 window.location.href = 'dashboard.html';
             });
         });
