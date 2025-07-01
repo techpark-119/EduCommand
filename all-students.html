@@ -381,12 +381,10 @@
             }
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -407,7 +405,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <div class="header-content">
                 <h1 class="title">IT Students Portal</h1>
@@ -428,7 +425,6 @@
             </div>
         </div>
 
-        <!-- Controls -->
         <div class="controls">
             <div class="controls-row">
                 <div class="search-box">
@@ -453,19 +449,16 @@
             </div>
         </div>
 
-        <!-- Students Grid -->
         <div class="students-grid" id="studentsGrid">
             <!-- Students will be populated by JavaScript -->
         </div>
 
-        <!-- Pagination -->
         <div class="pagination" id="pagination">
             <!-- Pagination will be populated by JavaScript -->
         </div>
     </div>
 
     <script>
-        // Sample student data
         const studentsData = [
             {
                 id: "IT2024001",
@@ -627,7 +620,6 @@
 
             if (totalPages <= 1) return;
 
-            // Previous button
             if (currentPage > 1) {
                 const prevBtn = document.createElement('button');
                 prevBtn.className = 'page-btn';
@@ -636,7 +628,6 @@
                 pagination.appendChild(prevBtn);
             }
 
-            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
                 const pageBtn = document.createElement('button');
                 pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
@@ -645,7 +636,6 @@
                 pagination.appendChild(pageBtn);
             }
 
-            // Next button
             if (currentPage < totalPages) {
                 const nextBtn = document.createElement('button');
                 nextBtn.className = 'page-btn';
@@ -690,12 +680,10 @@
             document.getElementById('graduatedStudents').textContent = graduated;
         }
 
-        // Event listeners
         document.getElementById('searchInput').addEventListener('input', filterStudents);
         document.getElementById('statusFilter').addEventListener('change', filterStudents);
         document.getElementById('specialtyFilter').addEventListener('change', filterStudents);
 
-        // Action functions
         function addStudent() {
             alert('Add Student functionality would open a modal or redirect to add student page');
         }
@@ -714,11 +702,9 @@
             }
         }
 
-        // Initialize
         renderStudents();
         updateStats();
 
-        // Add smooth animations on load
         window.addEventListener('load', () => {
             const cards = document.querySelectorAll('.student-card');
             cards.forEach((card, index) => {

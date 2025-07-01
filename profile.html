@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles\profile.css">
 </head>
 <body>
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
             <div class="logo">
@@ -74,12 +73,11 @@
                     <line x1="21" y1="12" x2="9" y2="12"/>
                 </svg>
                 Logout
-            </a>
+            </a
         </div>
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
+                                                                                                                                                      
+    <div class="main-content"
         <!-- Header -->
         <header class="header">
             <div class="header-left">
@@ -119,7 +117,6 @@
             </div>
         </header>
 
-        <!-- Profile Content -->
         <div class="profile-content">
             <!-- Profile Header -->
             <div class="profile-header">
@@ -158,10 +155,8 @@
                 </div>
             </div>
 
-            <!-- Profile Details -->
             <div class="profile-details">
                 <div class="details-grid">
-                    <!-- Personal Information -->
                     <div class="detail-card">
                         <div class="card-header">
                             <h3>Personal Information</h3>
@@ -196,7 +191,6 @@
                         </div>
                     </div>
 
-                    <!-- Professional Information -->
                     <div class="detail-card">
                         <div class="card-header">
                             <h3>Professional Information</h3>
@@ -231,7 +225,6 @@
                         </div>
                     </div>
 
-                    <!-- Security Settings -->
                     <div class="detail-card">
                         <div class="card-header">
                             <h3>Security & Privacy</h3>
@@ -269,7 +262,6 @@
                         </div>
                     </div>
 
-                    <!-- Activity Summary -->
                     <div class="detail-card">
                         <div class="card-header">
                             <h3>Recent Activity</h3>
@@ -314,31 +306,27 @@
     </div>
 
     <script>
-        // Sidebar toggle
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('collapsed');
         });
 
-        // Toggle switches
         document.querySelectorAll('.toggle-switch input').forEach(toggle => {
             toggle.addEventListener('change', function() {
                 console.log(`${this.id} toggled: ${this.checked}`);
             });
         });
 
-        // Edit buttons
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 alert('Edit functionality would be implemented here');
             });
         });
 
-        // Change password button
         document.querySelector('.change-password-btn').addEventListener('click', function() {
             alert('Change password modal would open here');
         });
 
-        // Profile action buttons
+
         document.querySelector('.btn-primary').addEventListener('click', function() {
             alert('Edit profile modal would open here');
         });

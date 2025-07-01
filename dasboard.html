@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
             <div class="logo">
@@ -80,9 +79,7 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div class="main-content">
-        <!-- Header -->
         <header class="header">
             <div class="header-left">
                 <button class="sidebar-toggle">
@@ -120,10 +117,7 @@
                 </div>
             </div>
         </header>
-
-        <!-- Dashboard Content -->
         <div class="dashboard-content">
-            <!-- Stats Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon blue">
@@ -185,7 +179,6 @@
                 </div>
             </div>
 
-            <!-- Charts and Tables -->
             <div class="dashboard-grid">
                 <div class="card chart-card">
                     <div class="card-header">
@@ -306,21 +299,16 @@
     </div>
 
     <script>
-        // Sidebar toggle
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('collapsed');
         });
 
-        // Simple chart simulation
         const canvas = document.getElementById('enrollmentChart');
         const ctx = canvas.getContext('2d');
-        
-        // Set canvas size
         canvas.width = canvas.offsetWidth * 2;
         canvas.height = 200 * 2;
         ctx.scale(2, 2);
         
-        // Draw simple line chart
         const data = [20, 35, 45, 30, 55, 40, 65];
         const width = canvas.offsetWidth;
         const height = 200;
@@ -343,7 +331,6 @@
         
         ctx.stroke();
         
-        // Add dots
         ctx.fillStyle = '#00246B';
         for (let i = 0; i < data.length; i++) {
             const x = padding + (i * (width - 2 * padding)) / (data.length - 1);
