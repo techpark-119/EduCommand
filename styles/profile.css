@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body {
+    cursor: url('../assets/icons8-cursor-24.png'), auto;
+}
+
 :root {
 
     --primary-color: #667eea;
@@ -68,6 +72,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    
 }
 
 
@@ -339,7 +344,7 @@ body {
 }
 
 *
-.profie-content {
+.profile-content {
     padding: var(--spacing-xl);
     animation: fadeInUp 0.6s ease-out;
 }
