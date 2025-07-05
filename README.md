@@ -108,4 +108,4 @@ Have suggestions, feedback, or just want to say hi?
 
 ---
 
-© 2025 EduCommand — Built with focus, precision, and coffee ☕.
+_© 2025 EduCommand — Built with focus, precision, and coffee ☕._
