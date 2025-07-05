@@ -35,7 +35,7 @@ const requestHandler = (req, res)=> {
     RequestParser(req);
 
     const route = obj[request.method],[req.path];
-     route =                                                                                                                                                                            obj.GET
+     route = obj.GET
     if(req.path=='/' && method == 'GET'){
         console.log('This is a GET method');
         return GetHomepage(req, res);
