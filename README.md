@@ -24,10 +24,10 @@
 
 | Layer        | Tech                         |
 |--------------|------------------------------|
-| Frontend     | HTML5, CSS3, JavaScript       |
-| Backend      | Node.js / PHP *(choose one)* |
-| Database     | MySQL / MongoDB *(optional)* |
-| Hosting      | GitHub Pages / Vercel / Netlify |
+| Frontend     | HTML5, CSS3, JavaScript      |
+| Backend      | Node.js                      |
+| Database     | MongoDB                      |
+| Hosting      | GitHub Pages, Netlify        |
 
 ---
 
@@ -57,7 +57,7 @@ EduCommand/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/EduCommand.git
+git clone https://github.com/techpark-119/EduCommand.git
 
 # Navigate to the project
 cd EduCommand
