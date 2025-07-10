@@ -25,7 +25,7 @@
 | Layer        | Tech                         |
 |--------------|------------------------------|
 | Frontend     | HTML5, CSS3, JavaScript      |
-| Backend      | Node.js                      |
+| Backend      | Node.js, Express             |
 | Database     | MongoDB                      |
 | Hosting      | GitHub Pages, Netlify        |
 
