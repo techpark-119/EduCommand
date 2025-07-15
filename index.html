@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduCommand - Home</title>
+  <link rel="stylesheet" href="styles/auth.css" />
+  <script src="scripts/auth.js" defer></script>
 </head>
+
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is a simple HTML template for the home page.</p>
+  <!-- Particles -->
+  <div class="particles">
+    <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s"></div>
+    <div class="particle" style="left: 20%; top: 80%; animation-delay: 1s"></div>
+    <div class="particle" style="left: 60%; top: 30%; animation-delay: 2s"></div>
+    <div class="particle" style="left: 80%; top: 70%; animation-delay: 3s"></div>
+    <div class="particle" style="left: 30%; top: 10%; animation-delay: 4s"></div>
+    <div class="particle" style="left: 70%; top: 90%; animation-delay: 5s"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Main Container -->
+  <div class="container" style="max-width: 1080px;">
+    <div class="auth-container" style="padding: 40px 30px; text-align: center;">
+      <div class="admin-logo" style="margin: 0 auto 25px;"></div>
+      <h1 class="admin-title">EduCommand</h1>
+      <p class="admin-subtitle">Smart. Secure. Scalable.</p>
+      <p class="admin-description" style="margin-bottom: 30px;">
+        EduCommand is your all-in-one solution for managing students, academics, performance tracking, and administration — all with a futuristic touch of elegance and speed.
+      </p>
+      <a href="auth.html" class="btn-primary" style="display: inline-block; width: auto; padding: 15px 30px;">
+        <span>Launch Admin Panel</span>
+      </a>
+    </div>
+
+    <!-- Features -->
+    <div class="auth-container" style="margin-top: 40px; padding: 30px;">
+      <h2 class="welcome-text" style="color: #f7fafc;">Why EduCommand?</h2>
+      <ul style="text-align: left; color: #a0aec0; font-size: 1rem; margin-top: 20px; line-height: 2;">
+        <li>✅ Lightning-fast student search and filters</li>
+        <li>✅ Real-time notifications and analytics</li>
+        <li>✅ Fully customizable using pure HTML, CSS, and Node.js</li>
+        <li>✅ No database needed — works even on local file storage</li>
+        <li>✅ Elegant glassmorphism UI with dark mode aesthetic</li>
+      </ul>
+    </div>
+
+    <!-- Quote -->
+    <div class="auth-container" style="margin-top: 40px; padding: 30px; text-align: center;">
+      <blockquote style="font-size: 1.2rem; font-style: italic; color: #e2e8f0;">
+        “Great software is not built — it's architected. EduCommand gives every school the blueprint.”
+      </blockquote>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="margin-top: 40px;">
+      <p>
+        &copy; 2025 EduCommand. Crafted with ❤️ by Arham Ali.<br/>
+        <a href="auth.html">Admin Login</a> | <a href="students.html">Student List</a> | <a href="#">Support</a>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
