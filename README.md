@@ -34,21 +34,40 @@
 ## 📁 Project Structure
 ```
 EduCommand/
-|
-├── index.html (Home)
-├── login.html
-├── forgot-password.html
-├── dashboard.html
-├── profile.html
-├── list.html
-|
-├── css/
-| ├── style.css
-| └── other.css
-|
-├── js/
-│ └── main.js
-|
+├── src
+│   ├── app.js
+│   ├── routes
+│   │   ├── auth.js
+│   │   ├── students.js
+│   │   └── profile.js
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── studentController.js
+│   │   └── profileController.js
+│   ├── middleware
+│   │   ├── authMiddleware.js
+│   │   └── rememberMeMiddleware.js
+│   ├── views
+│   │   ├── login.ejs
+│   │   ├── dashboard.ejs
+│   │   ├── students.ejs
+│   │   ├── profile.ejs
+│   │   └── partials
+│   │       ├── header.ejs
+│   │       └── footer.ejs
+│   ├── public
+│   │   ├── styles
+│   │   │   ├── login.css
+│   │   │   ├── main.css
+│   │   │   └── dashboard.css
+│   │   └── scripts
+│   │       ├── login.js
+│   │       ├── search.js
+│   │       └── dashboard.js
+│   └── utils
+│       └── fileUtils.js
+├── database.json
+├── package.json
 └── README.md
 ```
 ---
@@ -57,13 +76,24 @@ EduCommand/
 
 ```bash
 # Clone the repository
+
 git clone https://github.com/techpark-119/EduCommand.git
 
 # Navigate to the project
-cd EduCommand
 
+cd EduCommand/src
+
+# Install the dependencies:
+
+npm install
+  
+# Start the application:
+  
+npm start
+ 
 # Open in your browser
-open index.html
+
+open your browser and go to `http://localhost:3000`.
 ```
 ---
 

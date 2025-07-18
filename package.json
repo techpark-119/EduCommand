@@ -1,16 +1,30 @@
 {
-  "name": "the-ultimate-project",
+  "name": "educommand-student_management_system",
   "version": "1.0.0",
-  "description": "[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Status](https://img.shields.io/badge/status-in%20development-orange)]() [![Built With](https://img.shields.io/badge/Built%20With-HTML%2FCSS%2FJS-blue)]()",
-  "main": "index.js",
+  "description": "A student management system with admin login and CRUD operations.",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
-  }
+    "express": "^4.21.2",
+    "express-session": "^1.18.2",
+    "fs-extra": "^10.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "student management",
+    "admin",
+    "CRUD"
+  ],
+  "author": "TheCodeKeepers",
+  "license": "ISC"
 }

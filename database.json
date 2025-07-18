@@ -1,0 +1,32 @@
+{
+  "user1": {
+    "id": "001",
+    "name": "Arham Ali",
+    "email": "techpark-119@protonmail.com",
+    "skills": ["Logic", "Creativity"]
+  },
+  "user2": {
+    "id": "002",
+    "name": "Usman Ali",
+    "email": "usmanaliweb@gmail.com",
+    "skills": ["Creativity", "Problem Solving"]
+  },
+  "user3": {
+    "id": "003",
+    "name": "Azzam",
+    "email": "azzamcodercpu@gmail.com",
+    "skills": ["Logic", "Problem Solving"]
+  },
+  "user4": {
+    "id": "004",
+    "name": "Shehryar",
+    "email": "shehryar@gmail.com",
+    "skills": []
+  },
+  "user5": {
+    "id": "005",
+    "name": "Minhaj Ahmed",
+    "email": "minhajahmed@gmail.com",
+    "skills": []
+  }
+}

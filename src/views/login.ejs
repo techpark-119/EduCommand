@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= title || 'EduCommand - Student Management System' %>
+    </title>
+    <link rel="stylesheet" href="../public/styles/login.css" />
+</head>
+
+<body>
+    <script src="../public/scripts/login.js" defer></script>
+
+    <!-- Particles -->
+    <div class="particles">
+        <% const positions=[ { left: '10%' , top: '20%' }, { left: '20%' , top: '80%' }, { left: '60%' , top: '30%' }, {
+            left: '80%' , top: '70%' }, { left: '30%' , top: '10%' }, { left: '70%' , top: '90%' } ]; %>
+
+            <% positions.forEach((pos, i)=> { %>
+                <div class="particle" style="left: <%= pos.left %>; top: <%= pos.top %>; animation-delay: <%= i %>s">
+                </div>
+                <% }); %>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <div class="admin-header">
+            <div class="admin-logo">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h1 class="admin-title">EduCommand</h1>
+            <p class="admin-subtitle">Student Management System</p>
+            <p class="admin-description">
+                Comprehensive administrative portal for managing student records,
+                academic performance, and institutional operations with cutting-edge
+                technology
+            </p>
+        </div>
+
+        <!-- Login Box -->
+        <div class="auth-container">
+            <div class="welcome-text">
+                <h2>Admin Access</h2>
+                <p>
+                    Enter your administrative credentials to access the advanced student
+                    management dashboard
+                </p>
+            </div>
+            <form class="form-container" id="adminLoginForm" method="POST" action="/login">
+                <div class="input-group">
+                    <input type="email" name="email" id="adminEmail" placeholder=" " required />
+                    <label for="adminEmail">Administrator Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="adminPassword" placeholder=" " required />
+                    <label for="adminPassword">Password</label>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" name="rememberMe" id="rememberMe" />
+                        Keep me signed in
+                    </label>
+                    <a href="#" class="forgot-link">Reset Password</a>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <span>Access Admin Panel</span>
+                </button>
+            </form>
+
+            <div class="divider"><span>Quick Access</span></div>
+
+            <div class="quick-access">
+                <h3>Administrative Tools</h3>
+                <div class="access-buttons">
+                    <a href="#" class="access-btn">System Status</a>
+                    <a href="#" class="access-btn">Help Center</a>
+                    <a href="#" class="access-btn">Support</a>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>
+                    &copy; <%= new Date().getFullYear() %> EduCommand Portal. All rights reserved.<br />
+                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCommand Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Here you can manage students, view reports, and access your profile.</p>
+
+        <div class="dashboard-cards">
+            <div class="dashboard-card">
+                <h4>Total Students</h4>
+                <p><%= totalStudents %></p>
+            </div>
+            <div class="dashboard-card">
+                <h4>Active Students</h4>
+                <p><%= activeStudents %></p>
+            </div>
+            <div class="dashboard-card">
+                <h4>Pending Requests</h4>
+                <p><%= pendingRequests %></p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/students" class="btn">Manage Students</a>
+            <a href="/profile" class="btn">View Profile</a>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

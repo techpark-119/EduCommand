@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EduCommand</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="container">
+        <h2>Admin Profile</h2>
+        <div class="profile-info">
+            <p><strong>Name:</strong> <%= admin.name %></p>
+            <p><strong>Email:</strong> <%= admin.email %></p>
+            <p><strong>Skills:</strong> <%= admin.Skills.join(', ') || 'None' %></p>
+        </div>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

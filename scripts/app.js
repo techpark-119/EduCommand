@@ -3,6 +3,7 @@ const fs = require('fs');
 const database = require('../db.json');
 const app = express();
 
+app.set('view engine', 'ejs');
 
 // Middleware
 app.use(express.json());
@@ -26,6 +27,73 @@ app.use((req, res, next) => {
     next();
 });
 app.use(express.static('public'));
+app.use((req, res, next) => {
+    fs.appendFile('db.json', 'data to append', (err) =>{
+        if(err) throw err;
+        console.log("The data to append was appended to file!")
+    })
+    next();
+});
+
+app.get('/', (req, res) => {
+  const user = { name: "Sarah" }; // Simulating server-side data
+  res.render('index', { user }); // Render 'index.ejs' with user data
+});
+
+app.get('/about', (req, res) => {
+    res.send('This is the About page');
+});
+
+app.use(express.json()); 
+
+app.post('/submit', (req, res) => {
+    console.log(req.body);
+    res.send('Data received');
+});
+
+  const isLoggedIn = req.headers['logged-in'] === 'true';
+
+  if (parsedUrl.pathname === '/login' && req.method === 'POST') {
+    if (isLoggedIn) {
+      // Already logged in, skip login process
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Already logged in. Redirecting to Dashboard Page...');
+    } else {
+      // Simulated login logic
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        const credentials = new URLSearchParams(body);
+        const username = credentials.get('username');
+        const password = credentials.get('password');
+
+        if (username === 'admin' && password === '1234') {
+          res.writeHead(200, { 'Content-Type': 'text/plain' });
+          res.end('Login successful. Set "logged-in: true" header to access Dashboard.');
+        } else {
+          res.writeHead(401, { 'Content-Type': 'text/plain' });
+          res.end('Invalid credentials.');
+        }
+      });
+    }
+  }
+
+  else if (parsedUrl.pathname === '/dashboard' && req.method === 'GET') {
+    if (isLoggedIn) {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Dashboard Page');
+    } else {
+      res.writeHead(401, { 'Content-Type': 'text/plain' });
+      res.end('Unauthorized. Please log in first.');
+    }
+  }
+
+  else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
+  }
+});
+
 
 
 // Routes

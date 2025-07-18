@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <h1>Student Management</h1>
+        <div>
+            <input type="text" id="studentSearch" placeholder="Search by name or roll number..." />
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Program</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable">
+                <% students.forEach((student, index) => { %>
+                    <tr class="student-row" data-name="<%= student.name %>" data-roll="<%= student.roll %>">
+                        <td><%= index + 1 %></td>
+                        <td><%= student.name %></td>
+                        <td><%= student.roll %></td>
+                        <td><%= student.program %></td>
+                        <td><%= student.status %></td>
+                        <td>
+                            <button class="access-btn" onclick="viewStudent('<%= student.roll %>')">View</button>
+                            <button class="access-btn" onclick="editStudent('<%= student.roll %>')">Edit</button>
+                            <button class="access-btn" onclick="deleteStudent('<%= student.roll %>')">Delete</button>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <%- include('partials/footer') %>
+    <script src="/scripts/search.js"></script>
+</body>
+</html>

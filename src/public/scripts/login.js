@@ -172,7 +172,6 @@ async function simulateLogin(email, password, remember) {
   });
 }
 function showNotification(message, type = "info") {
-  // Remove existing notification
   const existingNotification = document.querySelector(".notification");
   if (existingNotification) {
     existingNotification.remove();
@@ -523,7 +522,7 @@ console.log(
   "color: #667eea; font-size: 24px; font-weight: bold;"
 );
 console.log(
-  "%cStudent Management System v2.0",
+  "%cStudent Management System version 3.5",
   "color: #ff6b6b; font-size: 16px;"
 );
 console.log(
