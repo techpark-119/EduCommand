@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduCommand - Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/auth.css" />
+  <link rel="stylesheet" href="styles/dashboard3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <script src="scripts/dashboard3.js" defer></script>
+
+  <!-- Background Effects -->
+  <div class="particles"></div>
+
+  <!-- Layout Container -->
+  <div class="dashboard-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="admin-logo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1 class="admin-title">EduCommand</h1>
+      <p class="admin-subtitle">Student Management</p>
+      <div class="sidebar-separator"></div>
+      <nav class="sidebar-nav">
+        <a href="#">🎓 Students</a>
+        <a href="#">📆 Attendance</a>
+        <a href="#">📊 Results</a>
+        <a href="#">📢 Notices</a>
+        <a href="#">💬 Messages</a>
+        <a href="#">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+      <!-- Header -->
+      <section class="dashboard-header">
+        <h2>Welcome Admin 👋</h2>
+        <p>Managing students, tracking attendance, and monitoring performance with next-gen precision.</p>
+      </section>
+
+      <!-- Summary Cards -->
+      <section class="dashboard-cards">
+        <div class="card"><h3>Total Students</h3><p>1,450</p></div>
+        <div class="card"><h3>Attendance %</h3><p>92.4%</p></div>
