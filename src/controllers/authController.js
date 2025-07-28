@@ -26,7 +26,6 @@ exports.login = (req, res) => {
         skills: admin.skills,
       };
 
-      // Remember me: set cookie for 30 days
       if (rememberMe) {
         res.cookie("rememberMe", admin.email, {
           maxAge: 30 * 24 * 60 * 60 * 1000,

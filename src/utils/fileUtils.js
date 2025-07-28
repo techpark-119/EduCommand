@@ -3,7 +3,6 @@ const path = require('path');
 
 const databasePath = path.join(__dirname, '../../database.json');
 
-// Function to read data from the database.json file
 const readDatabase = () => {
     return new Promise((resolve, reject) => {
         fs.readFile(databasePath, 'utf8', (err, data) => {
@@ -15,7 +14,6 @@ const readDatabase = () => {
     });
 };
 
-// Function to write data to the database.json file
 const writeDatabase = (data) => {
     return new Promise((resolve, reject) => {
         fs.writeFile(databasePath, JSON.stringify(data, null, 2), 'utf8', (err) => {

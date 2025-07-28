@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const databasePath = path.join(__dirname, "../../database.json");
 
-// Helper to ensure student object has all required fields for EJS
 function normalizeStudent(student, index) {
   return {
     id: student.id || `user${index + 1}`,

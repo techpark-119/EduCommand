@@ -1,19 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Dashboard loaded.");
 
-  // Example data for demonstration purposes
   const totalEnrolled = 1245;
   const pendingRequests = 78;
   const attendanceAvg = 95;
   const newAdmissions = 32;
 
-  // Update dashboard cards with data
   document.getElementById("totalEnrolled").innerText = totalEnrolled;
   document.getElementById("pendingRequests").innerText = pendingRequests;
   document.getElementById("attendanceAvg").innerText = attendanceAvg + "%";
   document.getElementById("newAdmissions").innerText = newAdmissions;
 
-  // Chart setup (example)
   const ctx = document.getElementById("attendanceChart").getContext("2d");
   new Chart(ctx, {
     type: "line",
