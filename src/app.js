@@ -33,6 +33,41 @@ app.get('/', (req, res) => {
     res.redirect('/auth/login');
 });
 
+app.get('/dashboard', (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/auth/login');
+    }
+    res.render('dashboard', { user: req.session.user });
+});
+
+// fs.readFile(databasePath, "utf8", (err, data) => {
+//     if (err) {
+//         return res.status(500).json({ message: "Error reading database" });
+//         }
+//         const database = JSON.parse(data);
+//         const student = database.students[studentId];
+//         if (!student) {
+//         return res.status(404).json({ message: "Student not found" });
+//         }
+    
+//         // Update student fields
+//         student.name = req.body.name || student.name;
+//         student.roll = req.body.roll || student.roll;
+//         student.program = req.body.program || student.program;
+//         student.status = req.body.status || student.status;
+//         student.email = req.body.email || student.email;
+//         student.skills = req.body.skills
+//         ? req.body.skills.split(",").map((skill) => skill.trim())
+//         : student.skills;
+    
+//         fs.writeFile(databasePath, JSON.stringify(database, null, 2), (err) => {
+//         if (err) {
+//             return res.status(500).json({ message: "Error saving student" });
+//         }
+//   res.redirect("/students");
+//     });
+// });
+
 // Error handling
 app.use((req, res) => {
     res.status(404).send('404 Not Found');

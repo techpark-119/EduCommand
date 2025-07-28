@@ -1,38 +1,53 @@
-const fs = require('fs');
-const path = require('path');
-const databasePath = path.join(__dirname, '../..', 'database.json');
+const fs = require("fs");
+const path = require("path");
+const databasePath = path.join(__dirname, "../../database.json");
 
 exports.login = (req, res) => {
-    const { email, password, rememberMe } = req.body;
+  const { email, password, rememberMe } = req.body;
 
-    fs.readFile(databasePath, 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading database');
-        }
+  fs.readFile(databasePath, "utf8", (err, data) => {
+    if (err) {
+      return res
+        .status(500)
+        .render("login", {
+          title: "EduCommand - Student Management System",
+          error: "Server error. Try again.",
+        });
+    }
 
-        const users = JSON.parse(data);
-        const admin = Object.values(users).find(user => user.email === email);
+    const database = JSON.parse(data);
+    const admin = Object.values(database.admins).find((a) => a.email === email);
 
-        if (admin && admin.password === password) {
-            req.session.user = admin;
+    if (admin && admin.password === password) {
+      req.session.user = {
+        id: admin.id,
+        name: admin.name,
+        email: admin.email,
+        skills: admin.skills,
+      };
 
-            if (rememberMe) {
-                res.cookie('rememberMe', admin.email, { maxAge: 30 * 24 * 60 * 60 * 1000 }); // 30 days
-            }
+      // Remember me: set cookie for 30 days
+      if (rememberMe) {
+        res.cookie("rememberMe", admin.email, {
+          maxAge: 30 * 24 * 60 * 60 * 1000,
+        });
+      }
 
-            return res.redirect('/dashboard');
-        } else {
-            return res.status(401).send('Invalid credentials');
-        }
-    });
+      return res.redirect("/dashboard");
+    } else {
+      return res
+        .status(401)
+        .render("login", {
+          title: "EduCommand - Student Management System",
+          error: "Invalid credentials.",
+        });
+    }
+  });
 };
 
 exports.logout = (req, res) => {
-    req.session.destroy(err => {
-        if (err) {
-            return res.status(500).send('Error logging out');
-        }
-        res.clearCookie('rememberMe');
-        res.redirect('/login');
-    });
+  req.session.destroy(() => {
+    res.clearCookie("rememberMe");
+    res.redirect("/auth/login");
+  });
 };

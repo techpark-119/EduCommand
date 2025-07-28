@@ -7,17 +7,16 @@
     <title>
         <%= title || 'EduCommand - Student Management System' %>
     </title>
-    <link rel="stylesheet" href="../public/styles/login.css" />
+    <link rel="stylesheet" href="/styles/login.css" />
 </head>
 
 <body>
-    <script src="../public/scripts/login.js" defer></script>
+    <script src="/scripts/login.js" defer></script>
 
     <!-- Particles -->
     <div class="particles">
         <% const positions=[ { left: '10%' , top: '20%' }, { left: '20%' , top: '80%' }, { left: '60%' , top: '30%' }, {
             left: '80%' , top: '70%' }, { left: '30%' , top: '10%' }, { left: '70%' , top: '90%' } ]; %>
-
             <% positions.forEach((pos, i)=> { %>
                 <div class="particle" style="left: <%= pos.left %>; top: <%= pos.top %>; animation-delay: <%= i %>s">
                 </div>
@@ -51,7 +50,7 @@
                     management dashboard
                 </p>
             </div>
-            <form class="form-container" id="adminLoginForm" method="POST" action="/login">
+            <form class="form-container" id="adminLoginForm" method="POST" action="auth/login">
                 <div class="input-group">
                     <input type="email" name="email" id="adminEmail" placeholder=" " required />
                     <label for="adminEmail">Administrator Email</label>
@@ -65,7 +64,7 @@
                         <input type="checkbox" name="rememberMe" id="rememberMe" />
                         Keep me signed in
                     </label>
-                    <a href="#" class="forgot-link">Reset Password</a>
+                    <a href="#" class="forgot-link" id="forgotPassword">Reset Password</a>
                 </div>
                 <button type="submit" class="btn-primary">
                     <span>Access Admin Panel</span>

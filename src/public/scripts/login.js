@@ -113,42 +113,42 @@ passwordInput.addEventListener("input", (e) => {
     inputGroup.style.boxShadow = "";
   }
 });
-adminForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-  const remember = rememberCheckbox.checked;
-  if (!validateEmail(email)) {
-    showNotification("Please enter a valid email address", "error");
-    emailInput.focus();
-    return;
-  }
-  if (!validatePassword(password)) {
-    showNotification("Password must be at least 6 characters long", "error");
-    passwordInput.focus();
-    return;
-  }
-  const submitButton = adminForm.querySelector(".btn-primary");
-  const originalText = submitButton.innerHTML;
-  submitButton.innerHTML = "<span>Authenticating...</span>";
-  submitButton.disabled = true;
-  submitButton.style.opacity = "0.7";
+// adminForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+//   const email = emailInput.value.trim();
+//   const password = passwordInput.value.trim();
+//   const remember = rememberCheckbox.checked;
+//   if (!validateEmail(email)) {
+//     showNotification("Please enter a valid email address", "error");
+//     emailInput.focus();
+//     return;
+//   }
+//   if (!validatePassword(password)) {
+//     showNotification("Password must be at least 6 characters long", "error");
+//     passwordInput.focus();
+//     return;
+//   }
+//   const submitButton = adminForm.querySelector(".btn-primary");
+//   const originalText = submitButton.innerHTML;
+//   submitButton.innerHTML = "<span>Authenticating...</span>";
+//   submitButton.disabled = true;
+//   submitButton.style.opacity = "0.7";
 
-  try {
-    await simulateLogin(email, password, remember);
-    showNotification("Login successful! Redirecting...", "success");
-    setTimeout(() => {
-      showNotification("Welcome to EduCommand Admin Panel!", "success");
-      // Here you would typically redirect to the dashboard
-      // window.location.href = '/dashboard';
-    }, 2000);
-  } catch (error) {
-    showNotification(error.message, "error");
-    submitButton.innerHTML = originalText;
-    submitButton.disabled = false;
-    submitButton.style.opacity = "1";
-  }
-});
+//   try {
+//     await simulateLogin(email, password, remember);
+//     showNotification("Login successful! Redirecting...", "success");
+//     setTimeout(() => {
+//       showNotification("Welcome to EduCommand Admin Panel!", "success");
+//       // Here you would typically redirect to the dashboard
+//        window.location.href = '/dashboard';
+//     }, 2000);
+//   } catch (error) {
+//     showNotification(error.message, "error");
+//     submitButton.innerHTML = originalText;
+//     submitButton.disabled = false;
+//     submitButton.style.opacity = "1";
+//   }
+// });
 async function simulateLogin(email, password, remember) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -161,7 +161,7 @@ async function simulateLogin(email, password, remember) {
         if (remember) {
           localStorage.setItem("educommand_remember", "true");
           localStorage.setItem("educommand_email", email);
-        }
+        } 
         resolve({ success: true, user: { email } });
       } else {
         reject(

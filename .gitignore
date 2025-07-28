@@ -1,4 +1,5 @@
 /node_modules
+.gitignore
 dist
 .env
 .DS_Store

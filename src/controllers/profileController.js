@@ -12,7 +12,7 @@ exports.getProfile = (req, res) => {
 
         const database = JSON.parse(data);
         const adminEmail = req.session.user.email; // Assuming user email is stored in session
-        const adminInfo = Object.values(database).find(user => user.email === adminEmail);
+        const adminInfo = Object.values(database.admins).find(admin => admin.email === adminEmail);
 
         if (!adminInfo) {
             return res.status(404).send('Admin not found');
