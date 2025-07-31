@@ -36,8 +36,8 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  const user = { name: "Sarah" }; // Simulating server-side data
-  res.render('index', { user }); // Render 'index.ejs' with user data
+  const user = { name: "Arham" }; 
+  res.render('index', { user }); 
 });
 
 app.get('/about', (req, res) => {
@@ -92,11 +92,7 @@ app.post('/submit', (req, res) => {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Not Found');
   }
-});
 
-
-
-// Routes
 app.get('/users', (req, res) => {
     res.json(database);
 });

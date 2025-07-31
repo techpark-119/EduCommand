@@ -16,7 +16,7 @@ app.use(session({
     secret: 'your_secret_key',
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 day
+    cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }));
 
 
@@ -28,6 +28,10 @@ app.use('/auth', authRoutes);
 app.use('/students', studentRoutes);
 app.use('/profile', profileRoutes);
 
+const authMiddleware = require('./middleware/authMiddleware');
+app.use('/students', authMiddleware, studentRoutes);
+app.use('/profile', authMiddleware, profileRoutes);
+
 
 app.get('/', (req, res) => {
     res.redirect('/auth/login');
@@ -37,9 +41,35 @@ app.get('/dashboard', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/auth/login');
     }
-    res.render('dashboard', { user: req.session.user });
+    // Read student data for dashboard stats
+    const databasePath = path.join(__dirname, '../database.json');
+    fs.readFile(databasePath, 'utf8', (err, data) => {
+        let totalStudents = 0, activeStudents = 0, pendingRequests = 0;
+        if (!err) {
+            try {
+                const database = JSON.parse(data);
+                const students = Object.values(database.students || {});
+                totalStudents = students.length;
+                activeStudents = students.filter(s => (s.status || 'Active') === 'Active').length;
+                // You can define pendingRequests logic as needed
+                pendingRequests = 0;
+            } catch (e) {}
+        }
+        res.render('dashboard', {
+            user: req.session.user,
+            totalStudents,
+            activeStudents,
+            pendingRequests
+        });
+    });
 });
 
+// app.get('/dashboard', (req, res) => {
+//     if (!req.session.user) {
+//         return res.redirect('/auth/login');
+//     }
+//     res.render('dashboard', { user: req.session.user });
+// });
 // fs.readFile(databasePath, "utf8", (err, data) => {
 //     if (err) {
 //         return res.status(500).json({ message: "Error reading database" });
