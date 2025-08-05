@@ -131,7 +131,7 @@ This project is licensed under the [MIT License](mit.edu.org).
 
 Have suggestions, feedback, or just want to say hi?
 
-📧 admin@educommand.app
+📧 admin@educommand.app <br>
 🌐 TheCodeKeepers.com
 
 <br>
